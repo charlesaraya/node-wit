@@ -48,7 +48,7 @@ const actions = {
       context.result = typeInfo + staff
       return resolve(context)
     })
-  },
+  }
 }
 
 const client = new Wit({accessToken, actions})
