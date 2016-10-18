@@ -16,8 +16,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel examples -d compiled-examples && babel lib -d compiled-lib"
   },
-  "repository": "https://github.com/wit-ai/node-wit",
-  "author": "The Wit Team <help@wit.ai>",
+  "repository": "https://github.com/charlesaraya/node-wit",
+  "author": "charlesaraya@gmail.com",
   "dependencies": {
     "isomorphic-fetch": "^2.2.1",
     "node-uuid": "^1.4.7"
