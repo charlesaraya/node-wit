@@ -33,9 +33,8 @@ const firstEntityValue = (entities, entity) => {
 
 const actions = {
   send (request, response) {
-    const {sessionId, context, entities} = request
-    const {text, quickreplies} = response
-
+    // const {sessionId, context, entities} = request
+    // const {text, quickreplies} = response
     return new Promise(function (resolve, reject) {
       console.log('sending...', JSON.stringify(response))
       return resolve()
@@ -43,7 +42,10 @@ const actions = {
   },
   getProfessorInfo ({context, entities}) {
     return new Promise(function (resolve, reject) {
+      var typeInfo = firstEntityValue(entities, 'typeInfo')
+      var staff = firstEntityValue(entities, 'staff')
       // university things here
+      context.result = typeInfo + staff
       return resolve(context)
     })
   },
