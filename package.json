@@ -1,7 +1,7 @@
 {
   "name": "node-wit",
   "version": "4.1.0",
-  "description": "Wit.ai Node.js SDK",
+  "description": "Custom Wit.ai Node.js SDK",
   "keywords": [
     "wit",
     "wit.ai",
