@@ -65,6 +65,10 @@ const actions = {
             context.result = 'Electrónica, Patrones de Comunicación y Redes III' // we should call a Staff API here
             delete context.unknownTypeinfo
             break;
+          case 'departamento':
+            context.result = 'Departamento de Ingeniería Informática' // we should call a Staff API here
+            delete context.unknownTypeinfo
+            break;
           case 'telefono':
             context.result = '628111020' // we should call a Staff API here
             delete context.unknownTypeinfo
