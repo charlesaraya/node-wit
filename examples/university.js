@@ -44,7 +44,13 @@ const actions = {
     return new Promise(function (resolve, reject) {
       var typeInfo = firstEntityValue(entities, 'typeInfo')
       var staff = firstEntityValue(entities, 'staff')
+
+      console.log(`typeInfo: ${typeInfo}, staff: ${staff}`)
+      staff = staff || context.prevStaff
+      console.log(`typeInfo: ${typeInfo}, staff: ${staff}`)
+
       if (staff && typeInfo) {
+        context.prevStaff = staff
         switch (typeInfo) {
           case 'despacho':
             context.result = 'DKV-5' // we should call a Staff API here
@@ -80,12 +86,14 @@ const actions = {
         if (staff !== 'Charles Araya') {
           delete context.result
           delete context.unknownTypeinfo
+          delete context.prevStaff
           context.missingProfessor = staff
         }
       } else {
         delete context.result
         delete context.unknownTypeinfo
         delete context.missingProfessor
+        delete context.prevStaff
         context.error = true
       }
       return resolve(context)
