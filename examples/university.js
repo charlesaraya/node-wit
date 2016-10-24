@@ -84,7 +84,7 @@ const actions = {
         delete context.error
         delete context.missingProfessor
         // we should call search the person in the staff Api
-        if (staff !== 'Charles Araya') {
+        if (['Charles Araya', 'Borja Boada'].indexOf(staff) < 0) {
           delete context.result
           delete context.unknownTypeinfo
           delete context.prevStaff
