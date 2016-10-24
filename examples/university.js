@@ -40,7 +40,7 @@ const actions = {
       return resolve()
     })
   },
-  getProfessorInfo ({context, entities}) {
+  getStaffInfo ({context, entities}) {
     return new Promise(function (resolve, reject) {
       var typeInfo = firstEntityValue(entities, 'typeInfo')
       var staff = firstEntityValue(entities, 'staff')
