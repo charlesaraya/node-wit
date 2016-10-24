@@ -45,12 +45,13 @@ const actions = {
       let typeInfo = firstEntityValue(entities, 'typeInfo')
       let staff = firstEntityValue(entities, 'staff')
 
-      console.log(`typeInfo: ${typeInfo}, staff: ${staff}`)
+      delete context.result
       staff = staff || context.prevStaff
-      console.log(`typeInfo: ${typeInfo}, staff: ${staff}`)
+      typeInfo = typeInfo || context.prevTypeInfo
 
       if (staff && typeInfo) {
         context.prevStaff = staff
+        context.prevTypeInfo = typeInfo
         switch (typeInfo) {
           case 'despacho':
             context.result = 'DKV-5' // we should call a Staff API here
@@ -96,6 +97,7 @@ const actions = {
         delete context.prevStaff
         context.error = true
       }
+      console.log(`context: ${JSON.stringify(context)}`)
       return resolve(context)
     })
   }
