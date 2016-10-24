@@ -42,8 +42,8 @@ const actions = {
   },
   getStaffInfo ({context, entities}) {
     return new Promise(function (resolve, reject) {
-      var typeInfo = firstEntityValue(entities, 'typeInfo')
-      var staff = firstEntityValue(entities, 'staff')
+      let typeInfo = firstEntityValue(entities, 'typeInfo')
+      let staff = firstEntityValue(entities, 'staff')
 
       console.log(`typeInfo: ${typeInfo}, staff: ${staff}`)
       staff = staff || context.prevStaff
